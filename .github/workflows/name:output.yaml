@@ -1,0 +1,8 @@
+name: Output Information
+on: [push, workflow_dispatch] # this gets triggerd on push and manual trigger event
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      name: Output Metadata Context Information
+      run: echo " ${{ toJSON(github) }}" 
