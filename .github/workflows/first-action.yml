@@ -8,3 +8,11 @@ jobs:
         run: echo "This is the start of my workflow"
       - name: Print end of worklfow
         run: echo "This is the end of my worflow"
+  second-job1:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Run a multi-line script
+        run: |
+          echo "This is the first multi-line comment"
+          echo "This is the second multi-line comment"
+          echo "This is the third multi-line comment"
