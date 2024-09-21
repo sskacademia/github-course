@@ -8,5 +8,10 @@ jobs:
         run: echo " ${{ toJSON(github) }}" 
       - name: Print github context metadata fields
         run: | 
-          echo "${{ toJSON(github.repository) }}"
-          echo "${{ toJSON(github.repositoryUrl) }}"
+          echo "Repository: ${{ toJSON(github.repository) }}"
+          echo "RepositoryUrl: ${{ toJSON(github.repositoryUrl) }}"
+      - name: Print context information to log
+        env:
+          JOB_CONTEXT: ${{ toJSON(job) }}
+        run:
+          echo "$JOB_CONTEXT"
