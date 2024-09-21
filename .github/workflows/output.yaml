@@ -4,5 +4,5 @@ jobs:
   info:
     runs-on: ubuntu-latest
     steps:
-      name: Output Metadata Context Information
-      run: echo " ${{ toJSON(github) }}" 
+      - name: Output Metadata Context Information
+        run: echo " ${{ toJSON(github) }}" 
