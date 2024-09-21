@@ -8,5 +8,5 @@ jobs:
         run: echo " ${{ toJSON(github) }}" 
       - name: Print github context metadata fields
         run: | 
-          echo "${{ toJSON(github_url) }}"
+          echo "${{github_url}}"
           echo "${{ toJSON(repositoryUrl) }}"
