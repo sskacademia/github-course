@@ -6,3 +6,7 @@ jobs:
     steps:
       - name: Output Metadata Context Information
         run: echo " ${{ toJSON(github) }}" 
+      - name: Print github context metadata fields
+        run: | 
+          echo "${{ toJSON(github_url) }}"
+          echo "${{ toJSON(repositoryUrl) }}"
