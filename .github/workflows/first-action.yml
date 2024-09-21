@@ -1,0 +1,10 @@
+name: first workflow
+on: workflow_dispatch     # allows to run this workflow manually
+jobs:
+  first-job1:
+    runs-on: ubuntu-latest     # this defines the runner on which job will execute the different steps
+    steps:
+      - name: Print start of workflow
+        run: echo "This is the start of my workflow"
+      - name: Print end of worklfow
+        run: echo "This is the end of my worflow"
