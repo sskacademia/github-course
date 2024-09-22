@@ -4,8 +4,22 @@ on:
     types:        # activity type supported under pull_request workflow
       - opened
       - closed
+    branches:
+      - feature/dev  # adding event filters based on branches
     #types: [opened, closed]  # even this will work
-  workflow_dispatch: 
+  workflow_dispatch:
+  push:
+    branches:    # adding event filters based on branches
+      - main
+      - dev
+      - 'dev-**'
+      - 'feature/**'
+    paths-ignore: # this means none of the push events on branches will be triggered even though 
+                  # something is pushed as paths-ignore is added
+      - '.github/workflows/*'
+    #paths:      # this means push events workflow will be triggered if at least one of the files changed
+                # 
+    #  - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
