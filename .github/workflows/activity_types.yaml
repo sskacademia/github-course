@@ -1,0 +1,15 @@
+name: Event Demo for Activity types
+on: 
+  pull_request:   # event workflow
+    types:        # activity type supported under pull_request workflow
+      - opened
+    #types: [opened, closed]  # even this will work
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output Event data
+        run: echo "Event data ${{ toJSON(github.event) }}"
+      - name: Deploy Project
+        run: echo "Deploying ..."
